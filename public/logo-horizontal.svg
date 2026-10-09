@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 110" width="100%" height="100%">
+  <defs>
+    <!-- Metallic Brushed Chrome Gradients -->
+    <linearGradient id="hChromeBright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="25%" stopColor="#f8fafc" />
+      <stop offset="45%" stopColor="#94a3b8" />
+      <stop offset="70%" stopColor="#e2e8f0" />
+      <stop offset="90%" stopColor="#64748b" />
+      <stop offset="100%" stopColor="#334155" />
+    </linearGradient>
+
+    <linearGradient id="hChromeDark" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#cbd5e1" />
+      <stop offset="35%" stopColor="#64748b" />
+      <stop offset="70%" stopColor="#334155" />
+      <stop offset="100%" stopColor="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="hRingMetal" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#475569" />
+      <stop offset="25%" stopColor="#ffffff" />
+      <stop offset="50%" stopColor="#64748b" />
+      <stop offset="75%" stopColor="#cbd5e1" />
+      <stop offset="100%" stopColor="#1e293b" />
+    </linearGradient>
+
+    <radialGradient id="hSphereMetal" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="30%" stopColor="#e2e8f0" />
+      <stop offset="70%" stopColor="#64748b" />
+      <stop offset="100%" stopColor="#0f172a" />
+    </radialGradient>
+
+    <linearGradient id="hLaserBeam" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stopColor="#00f5ff" stopOpacity="1" />
+      <stop offset="50%" stopColor="#00b4d8" stopOpacity="0.85" />
+      <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+    </linearGradient>
+
+    <linearGradient id="hTextChrome" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="30%" stopColor="#f1f5f9" />
+      <stop offset="55%" stopColor="#94a3b8" />
+      <stop offset="85%" stopColor="#e2e8f0" />
+      <stop offset="100%" stopColor="#475569" />
+    </linearGradient>
+
+    <linearGradient id="hLaserLineL" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#00f5ff" stopOpacity="0" />
+      <stop offset="50%" stopColor="#00f5ff" stopOpacity="1" />
+      <stop offset="100%" stopColor="#ffffff" stopOpacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="hLaserLineR" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stopColor="#00f5ff" stopOpacity="0" />
+      <stop offset="50%" stopColor="#00f5ff" stopOpacity="1" />
+      <stop offset="100%" stopColor="#ffffff" stopOpacity="0.8" />
+    </linearGradient>
+
+    <filter id="hGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="hIntense" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 1. Pure Pitch Black Background -->
+  <rect width="460" height="110" fill="#000000" />
+
+  <!-- 2. Left Emblem Section (Center at 60, 55) -->
+  <g transform="translate(10, 5) scale(0.24)">
+    <!-- Cyan Ambient Glow -->
+    <circle cx="210" cy="210" r="100" fill="#00f5ff" opacity="0.35" filter="url(#hIntense)" />
+
+    <!-- Orbital Ring -->
+    <g transform="rotate(-26 210 210)">
+      <ellipse cx="210" cy="210" rx="175" ry="171" fill="none" stroke="#050814" strokeWidth="12" />
+      <ellipse cx="210" cy="210" rx="174" ry="170" fill="none" stroke="url(#hRingMetal)" strokeWidth="7" />
+      <path d="M 45 210 A 174 170 0 0 1 210 40" fill="none" stroke="#ffffff" strokeWidth="3.2" strokeLinecap="round" />
+      <path d="M 210 380 A 174 170 0 0 0 380 230" fill="none" stroke="#00f5ff" strokeWidth="2.8" strokeLinecap="round" filter="url(#hGlow)" />
+    </g>
+
+    <!-- Top-Right Satellite Sphere -->
+    <g>
+      <circle cx="360" cy="100" r="16" fill="url(#hSphereMetal)" stroke="#cbd5e1" strokeWidth="0.8" />
+      <circle cx="360" cy="100" r="11" fill="none" stroke="#94a3b8" strokeWidth="0.7" opacity="0.75" />
+      <circle cx="357" cy="97" r="3" fill="#ffffff" />
+    </g>
+
+    <!-- Bottom-Left Satellite Sphere -->
+    <g>
+      <circle cx="64" cy="316" r="17" fill="url(#hSphereMetal)" stroke="#94a3b8" strokeWidth="0.8" />
+      <circle cx="64" cy="316" r="12" fill="none" stroke="#cbd5e1" strokeWidth="0.7" opacity="0.8" />
+      <circle cx="61" cy="313" r="3.2" fill="#ffffff" />
+      <path d="M 54 326 A 17 17 0 0 0 78 324" fill="none" stroke="#00f5ff" strokeWidth="2" filter="url(#hGlow)" />
+    </g>
+
+    <!-- Electric Cyan Laser Flare -->
+    <g filter="url(#hIntense)">
+      <polygon points="70,355 190,215 215,205 105,350" fill="url(#hLaserBeam)" />
+      <line x1="200" y1="210" x2="90" y2="340" stroke="#00f5ff" strokeWidth="8" strokeLinecap="round" />
+      <line x1="195" y1="215" x2="110" y2="320" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
+      <ellipse cx="150" cy="275" rx="32" ry="12" fill="#00f5ff" opacity="0.9" transform="rotate(-48 150 275)" />
+      <circle cx="150" cy="275" r="4.5" fill="#ffffff" />
+    </g>
+
+    <!-- Back 7 (Gunmetal) -->
+    <polygon points="210,160 334,160 220,360 196,360 284,200 210,200" fill="url(#hChromeDark)" stroke="#1e293b" strokeWidth="1.2" />
+
+    <!-- Front 7 (Chrome) -->
+    <polygon points="134,110 320,110 172,398 144,398 268,174 140,174" fill="url(#hChromeBright)" stroke="#f8fafc" strokeWidth="1.5" />
+    <polygon points="134,110 320,110 310,126 148,126" fill="#ffffff" opacity="0.98" />
+    <polygon points="320,110 308,126 162,396 172,398" fill="#cbd5e1" opacity="0.9" />
+    <line x1="155" y1="120" x2="300" y2="120" stroke="#ffffff" strokeWidth="1" opacity="0.6" />
+    <circle cx="145" cy="397" r="3.5" fill="#ffffff" />
+    <circle cx="320" cy="110" r="3.5" fill="#ffffff" />
+  </g>
+
+  <!-- 3. Right Typography Section -->
+  <g transform="translate(125, 0)">
+    <!-- SEVEN SPACE (Chrome) -->
+    <text
+      x="0"
+      y="54"
+      font-family="'Plus Jakarta Sans', 'Prompt', -apple-system, sans-serif"
+      font-weight="900"
+      font-size="28"
+      letter-spacing="0.25em"
+      fill="url(#hTextChrome)"
+      stroke="#0f172a"
+      stroke-width="0.6"
+      style="filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9));"
+    >SEVEN SPACE</text>
+
+    <!-- Star Flare at E -->
+    <circle cx="270" cy="38" r="2.2" fill="#ffffff" filter="url(#hGlow)" />
+    <path d="M 270 33 L 270 43 M 265 38 L 275 38" stroke="#00f5ff" stroke-width="1.2" opacity="0.85" />
+
+    <!-- — LABS — with Cyan Laser Lines -->
+    <g transform="translate(0, 80)">
+      <!-- Left Laser Line -->
+      <line x1="0" y1="0" x2="90" y2="0" stroke="url(#hLaserLineL)" stroke-width="2" filter="url(#hGlow)" />
+      <circle cx="45" cy="0" r="2.5" fill="#ffffff" filter="url(#hGlow)" />
+      <ellipse cx="45" cy="0" rx="6" ry="1.5" fill="#00f5ff" filter="url(#hGlow)" />
+
+      <!-- Center LABS -->
+      <text
+        x="136"
+        y="6"
+        text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Prompt', -apple-system, sans-serif"
+        font-weight="900"
+        font-size="20"
+        letter-spacing="0.35em"
+        fill="#00f5ff"
+        style="filter: drop-shadow(0 0 8px #00f5ff) drop-shadow(0 0 16px rgba(0, 245, 255, 0.7));"
+      >LABS</text>
+
+      <!-- Right Laser Line -->
+      <line x1="182" y1="0" x2="272" y2="0" stroke="url(#hLaserLineR)" stroke-width="2" filter="url(#hGlow)" />
+      <circle cx="227" cy="0" r="2.5" fill="#ffffff" filter="url(#hGlow)" />
+      <ellipse cx="227" cy="0" rx="6" ry="1.5" fill="#00f5ff" filter="url(#hGlow)" />
+    </g>
+  </g>
+</svg>

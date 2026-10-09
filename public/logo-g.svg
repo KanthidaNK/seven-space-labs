@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#2a1b54" />
+      <stop offset="60%" stop-color="#150f32" />
+      <stop offset="100%" stop-color="#0a071c" />
+    </radialGradient>
+
+    <!-- Neon Cyan-Blue Glass Gradient -->
+    <linearGradient id="gGrad" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#67e8f9" stop-opacity="0.95" />
+      <stop offset="35%" stop-color="#38bdf8" stop-opacity="0.85" />
+      <stop offset="70%" stop-color="#2563eb" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#5eead4" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Orbit Ring Gradient -->
+    <linearGradient id="orbitGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#a5f3fc" stop-opacity="1" />
+    </linearGradient>
+
+    <!-- Inner Glow Filter -->
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur1" />
+      <feGaussianBlur stdDeviation="20" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Star Glow -->
+    <filter id="starGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Rounded Rect -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)" />
+
+  <!-- Ambient Glow in Center -->
+  <circle cx="256" cy="256" r="170" fill="#3b82f6" opacity="0.18" filter="url(#neonGlow)" />
+
+  <!-- Back Orbit Section -->
+  <path d="M 100 360 C 70 290, 180 180, 390 170" fill="none" stroke="url(#orbitGrad)" stroke-width="14" stroke-linecap="round" opacity="0.6" />
+
+  <!-- Letter G Main Body -->
+  <path d="M 360 170 C 320 135, 275 125, 225 135 C 150 150, 105 210, 105 285 C 105 365, 165 425, 250 425 C 330 425, 385 375, 395 300 L 255 300 L 255 245 L 435 245 C 440 270, 442 305, 435 340 C 415 420, 345 475, 245 475 C 135 475, 55 390, 55 280 C 55 175, 125 85, 235 75 C 300 68, 365 88, 415 132 Z" 
+        fill="url(#gGrad)" 
+        stroke="#a5f3fc" 
+        stroke-width="3.5" 
+        stroke-opacity="0.85" 
+        filter="url(#neonGlow)" />
+
+  <!-- Front Orbit Ring Wrapping Across G -->
+  <path d="M 60 365 C 130 415, 340 370, 450 200 C 475 160, 430 145, 390 170" fill="none" stroke="url(#orbitGrad)" stroke-width="13" stroke-linecap="round" filter="url(#neonGlow)" />
+  <path d="M 60 365 C 130 415, 340 370, 450 200 C 475 160, 430 145, 390 170" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.75" />
+
+  <!-- 4-Point Sparkling Star at Top Right Orbit -->
+  <g transform="translate(450, 140)" filter="url(#starGlow)">
+    <path d="M 0 -35 Q 0 0 35 0 Q 0 0 0 35 Q 0 0 -35 0 Q 0 0 0 -35 Z" fill="#cffafe" />
+    <circle cx="0" cy="0" r="6" fill="#ffffff" />
+  </g>
+</svg>

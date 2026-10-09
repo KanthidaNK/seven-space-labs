@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Purple Ambient Glow Filters -->
+    <filter id="purpleGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur1" />
+      <feGaussianBlur stdDeviation="30" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="intenseTubeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="60%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+
+    <linearGradient id="purpleNeonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e879f9" />
+      <stop offset="50%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0abfc" />
+      <stop offset="50%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#7e22ce" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Purple Glow Atmosphere -->
+  <circle cx="250" cy="250" r="200" fill="#a855f7" opacity="0.15" filter="url(#purpleGlow)" />
+  <circle cx="250" cy="250" r="140" fill="#c084fc" opacity="0.25" filter="url(#purpleGlow)" />
+
+  <!-- Main Panda Mascot Body (Suit + Head + Tube) -->
+  <g filter="url(#purpleGlow)">
+    <!-- Back Suit Pack / Backpack -->
+    <rect x="310" y="210" width="70" height="100" rx="20" fill="#cbd5e1" stroke="#a855f7" stroke-width="4" />
+    <rect x="325" y="225" width="40" height="70" rx="10" fill="#94a3b8" />
+    <circle cx="345" cy="245" r="6" fill="#e879f9" />
+
+    <!-- Feet / Boots -->
+    <ellipse cx="180" cy="410" rx="35" ry="22" fill="#e2e8f0" stroke="#a855f7" stroke-width="5" transform="rotate(-15 180 410)" />
+    <path d="M 155 410 Q 180 425 205 410" stroke="#c084fc" stroke-width="6" fill="none" />
+    <ellipse cx="280" cy="410" rx="35" ry="22" fill="#e2e8f0" stroke="#a855f7" stroke-width="5" transform="rotate(15 280 410)" />
+    <path d="M 255 410 Q 280 425 305 410" stroke="#c084fc" stroke-width="6" fill="none" />
+
+    <!-- Legs & Space Suit Body -->
+    <path d="M 160 300 C 140 370, 210 390, 250 380 C 290 390, 360 370, 340 300 C 330 250, 170 250, 160 300 Z" fill="url(#suitGrad)" stroke="#94a3b8" stroke-width="4" />
+
+    <!-- Purple Neon Lines on Suit -->
+    <path d="M 180 320 Q 250 340 320 320" stroke="url(#purpleNeonGrad)" stroke-width="7" fill="none" stroke-linecap="round" />
+    <path d="M 190 350 Q 250 365 310 350" stroke="url(#purpleNeonGrad)" stroke-width="7" fill="none" stroke-linecap="round" />
+
+    <!-- Belt & Utility Pockets -->
+    <rect x="175" y="325" width="150" height="20" rx="10" fill="#0f172a" stroke="#c084fc" stroke-width="3" />
+    <rect x="190" y="328" width="22" height="14" rx="4" fill="#3b82f6" />
+    <rect x="220" y="328" width="22" height="14" rx="4" fill="#e879f9" />
+    <rect x="250" y="328" width="22" height="14" rx="4" fill="#a855f7" />
+    <rect x="280" y="328" width="22" height="14" rx="4" fill="#38bdf8" />
+
+    <!-- Suit Chest Patch (Atom Logo) -->
+    <rect x="225" y="260" width="50" height="40" rx="12" fill="#0f172a" stroke="#c084fc" stroke-width="3" />
+    <ellipse cx="250" cy="280" rx="16" ry="7" stroke="#e879f9" stroke-width="2" fill="none" transform="rotate(30 250 280)" />
+    <ellipse cx="250" cy="280" rx="16" ry="7" stroke="#e879f9" stroke-width="2" fill="none" transform="rotate(-30 250 280)" />
+    <circle cx="250" cy="280" r="4" fill="#f472b6" />
+
+    <!-- Left Arm Waving -->
+    <path d="M 320 260 C 370 250, 410 280, 420 300" stroke="url(#suitGrad)" stroke-width="38" stroke-linecap="round" fill="none" />
+    <path d="M 320 260 C 370 250, 410 280, 420 300" stroke="#c084fc" stroke-width="4" stroke-linecap="round" fill="none" />
+    <!-- Left Paw (Black Fur) -->
+    <circle cx="425" cy="305" r="20" fill="#0f172a" stroke="#c084fc" stroke-width="3" />
+
+    <!-- Right Arm Holding Test Tube -->
+    <path d="M 180 260 C 130 240, 110 200, 130 170" stroke="url(#suitGrad)" stroke-width="38" stroke-linecap="round" fill="none" />
+    <path d="M 180 260 C 130 240, 110 200, 130 170" stroke="#c084fc" stroke-width="4" stroke-linecap="round" fill="none" />
+    <!-- Right Paw (Black Fur) -->
+    <circle cx="125" cy="165" r="20" fill="#0f172a" stroke="#c084fc" stroke-width="3" />
+
+    <!-- GLOWING PURPLE TEST TUBE in Right Hand -->
+    <g filter="url(#intenseTubeGlow)">
+      <!-- Test Tube Glass Body -->
+      <rect x="105" y="90" width="26" height="95" rx="13" fill="rgba(255,255,255,0.2)" stroke="#f0abfc" stroke-width="4" transform="rotate(-15 118 137)" />
+      <!-- Test Tube Rim -->
+      <line x1="100" y1="92" x2="128" y2="84" stroke="#ffffff" stroke-width="5" stroke-linecap="round" />
+      <!-- Glowing Purple Liquid -->
+      <path d="M 107 125 L 126 120 L 122 170 C 120 180 110 180 108 172 Z" fill="url(#liquidGrad)" />
+      <!-- Liquid Bubbles & Sparkles -->
+      <circle cx="114" cy="135" r="3" fill="#ffffff" />
+      <circle cx="118" cy="150" r="2" fill="#f472b6" />
+      <circle cx="112" cy="162" r="2.5" fill="#f0abfc" />
+      <!-- Top Vaping Glow -->
+      <path d="M 112 85 Q 105 70 115 55 Q 125 40 115 25" stroke="#e879f9" stroke-width="4" fill="none" opacity="0.8" stroke-linecap="round" />
+    </g>
+
+    <!-- Panda Head & Ears -->
+    <!-- Left Ear -->
+    <circle cx="160" cy="115" r="38" fill="#0f172a" stroke="#a855f7" stroke-width="4" />
+    <circle cx="160" cy="115" r="22" fill="#1e1b4b" />
+    <!-- Right Ear -->
+    <circle cx="340" cy="115" r="38" fill="#0f172a" stroke="#a855f7" stroke-width="4" />
+    <circle cx="340" cy="115" r="22" fill="#1e1b4b" />
+
+    <!-- Main White Head Base -->
+    <ellipse cx="250" cy="170" rx="90" ry="80" fill="#ffffff" stroke="#e2e8f0" stroke-width="3" />
+
+    <!-- Eye Patches (Black Fur) -->
+    <ellipse cx="205" cy="165" rx="28" ry="24" fill="#0f172a" transform="rotate(-12 205 165)" />
+    <ellipse cx="295" cy="165" rx="28" ry="24" fill="#0f172a" transform="rotate(12 295 165)" />
+
+    <!-- Cute Eyes with Purple Sparkles -->
+    <circle cx="210" cy="162" r="11" fill="#ffffff" />
+    <circle cx="212" cy="160" r="6" fill="#a855f7" />
+    <circle cx="214" cy="158" r="2.5" fill="#ffffff" />
+
+    <circle cx="290" cy="162" r="11" fill="#ffffff" />
+    <circle cx="288" cy="160" r="6" fill="#a855f7" />
+    <circle cx="286" cy="158" r="2.5" fill="#ffffff" />
+
+    <!-- Cute Nose & Smile -->
+    <ellipse cx="250" cy="188" rx="12" ry="8" fill="#0f172a" />
+    <path d="M 240 198 Q 250 208 260 198" stroke="#0f172a" stroke-width="4" fill="none" stroke-linecap="round" />
+
+    <!-- Glass Helmet Collar / Neck Ring -->
+    <ellipse cx="250" cy="240" rx="80" ry="20" fill="#1e1b4b" stroke="#c084fc" stroke-width="5" />
+  </g>
+</svg>

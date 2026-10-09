@@ -1,0 +1,315 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient for subtle deep space vignette -->
+    <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stopColor="#030712" />
+      <stop offset="60%" stopColor="#000000" />
+      <stop offset="100%" stopColor="#000000" />
+    </radialGradient>
+
+    <!-- Metallic Brushed Chrome Gradients -->
+    <linearGradient id="chromeBright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="20%" stopColor="#f8fafc" />
+      <stop offset="45%" stopColor="#94a3b8" />
+      <stop offset="70%" stopColor="#e2e8f0" />
+      <stop offset="90%" stopColor="#64748b" />
+      <stop offset="100%" stopColor="#334155" />
+    </linearGradient>
+
+    <linearGradient id="chromeDark" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#cbd5e1" />
+      <stop offset="30%" stopColor="#64748b" />
+      <stop offset="65%" stopColor="#334155" />
+      <stop offset="100%" stopColor="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="ringMetal" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#475569" />
+      <stop offset="25%" stopColor="#ffffff" />
+      <stop offset="50%" stopColor="#64748b" />
+      <stop offset="75%" stopColor="#cbd5e1" />
+      <stop offset="100%" stopColor="#1e293b" />
+    </linearGradient>
+
+    <!-- Satellite Spheres Radial Metal -->
+    <radialGradient id="sphereMetal1" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="30%" stopColor="#e2e8f0" />
+      <stop offset="65%" stopColor="#64748b" />
+      <stop offset="90%" stopColor="#334155" />
+      <stop offset="100%" stopColor="#0f172a" />
+    </radialGradient>
+
+    <radialGradient id="sphereMetal2" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="25%" stopColor="#cbd5e1" />
+      <stop offset="60%" stopColor="#475569" />
+      <stop offset="85%" stopColor="#1e293b" />
+      <stop offset="100%" stopColor="#020617" />
+    </radialGradient>
+
+    <!-- Electric Cyan Laser Gradients -->
+    <linearGradient id="laserBeam" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stopColor="#00f5ff" stopOpacity="1" />
+      <stop offset="40%" stopColor="#00b4d8" stopOpacity="0.9" />
+      <stop offset="75%" stopColor="#0284c7" stopOpacity="0.4" />
+      <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+    </linearGradient>
+
+    <radialGradient id="cyanFlareCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
+      <stop offset="20%" stopColor="#00f5ff" stopOpacity="0.95" />
+      <stop offset="55%" stopColor="#0284c7" stopOpacity="0.6" />
+      <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+    </radialGradient>
+
+    <!-- Chrome Text Gradient -->
+    <linearGradient id="textChrome" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="30%" stopColor="#f1f5f9" />
+      <stop offset="55%" stopColor="#94a3b8" />
+      <stop offset="85%" stopColor="#e2e8f0" />
+      <stop offset="100%" stopColor="#475569" />
+    </linearGradient>
+
+    <!-- Laser Line Gradient for LABS -->
+    <linearGradient id="laserLineLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#00f5ff" stopOpacity="0" />
+      <stop offset="50%" stopColor="#00f5ff" stopOpacity="1" />
+      <stop offset="100%" stopColor="#ffffff" stopOpacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="laserLineRight" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stopColor="#00f5ff" stopOpacity="0" />
+      <stop offset="50%" stopColor="#00f5ff" stopOpacity="1" />
+      <stop offset="100%" stopColor="#ffffff" stopOpacity="0.8" />
+    </linearGradient>
+
+    <!-- Filters for Glow and Flare -->
+    <filter id="laserGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="blur1" />
+      <feGaussianBlur stdDeviation="3" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="intenseGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 1. Pure Black Background -->
+  <rect width="600" height="600" fill="url(#bgGlow)" />
+
+  <!-- 2. Ambient Cyan Volumetric Glow behind the 7 Emblem -->
+  <circle cx="250" cy="275" r="95" fill="url(#cyanFlareCenter)" opacity="0.45" filter="url(#laserGlow)" />
+
+  <!-- 3. Outer Orbital Ring -->
+  <g transform="rotate(-26 300 240)">
+    <!-- Deep Ring Rim Shadow -->
+    <ellipse cx="300" cy="240" rx="196" ry="192" fill="none" stroke="#050814" strokeWidth="12" />
+    <!-- Main 3D Metallic Ring -->
+    <ellipse cx="300" cy="240" rx="195" ry="191" fill="none" stroke="url(#ringMetal)" strokeWidth="7" />
+    <!-- White Specular Rim Highlight on Top-Left Arc -->
+    <path
+      d="M 115 240 A 195 191 0 0 1 300 49"
+      fill="none"
+      stroke="#ffffff"
+      strokeWidth="3"
+      strokeLinecap="round"
+      opacity="0.95"
+    />
+    <!-- Reflected Cyan Blue Rim Light on Bottom-Right Arc -->
+    <path
+      d="M 300 431 A 195 191 0 0 0 490 260"
+      fill="none"
+      stroke="#00f5ff"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      filter="url(#intenseGlow)"
+      opacity="0.85"
+    />
+  </g>
+
+  <!-- 4. Top-Right Satellite Sphere (at ~ 1:30 position) -->
+  <g>
+    <!-- Drop Shadow -->
+    <circle cx="472" cy="122" r="18" fill="#000000" opacity="0.6" filter="url(#intenseGlow)" />
+    <!-- Brushed Chrome Sphere -->
+    <circle cx="470" cy="120" r="17" fill="url(#sphereMetal1)" stroke="#cbd5e1" strokeWidth="0.8" />
+    <!-- Concentric Grooves -->
+    <circle cx="470" cy="120" r="12" fill="none" stroke="#94a3b8" strokeWidth="0.7" opacity="0.75" />
+    <circle cx="470" cy="120" r="6.5" fill="none" stroke="#64748b" strokeWidth="0.7" opacity="0.85" />
+    <!-- Center Specular Highlight -->
+    <circle cx="467" cy="117" r="3.2" fill="#ffffff" />
+  </g>
+
+  <!-- 5. Bottom-Left Satellite Sphere (at ~ 7:30 position) -->
+  <g>
+    <!-- Drop Shadow -->
+    <circle cx="138" cy="358" r="20" fill="#000000" opacity="0.6" filter="url(#intenseGlow)" />
+    <!-- Brushed Chrome Sphere -->
+    <circle cx="136" cy="356" r="18" fill="url(#sphereMetal2)" stroke="#94a3b8" strokeWidth="0.8" />
+    <!-- Concentric Grooves -->
+    <circle cx="136" cy="356" r="13" fill="none" stroke="#cbd5e1" strokeWidth="0.7" opacity="0.8" />
+    <circle cx="136" cy="356" r="7" fill="none" stroke="#475569" strokeWidth="0.7" opacity="0.85" />
+    <!-- Center Specular Highlight -->
+    <circle cx="133" cy="353" r="3.5" fill="#ffffff" />
+    <!-- Cyan Rim Highlight on Sphere Edge -->
+    <path
+      d="M 125 366 A 18 18 0 0 0 151 364"
+      fill="none"
+      stroke="#00f5ff"
+      strokeWidth="2"
+      filter="url(#intenseGlow)"
+      opacity="0.9"
+    />
+  </g>
+
+  <!-- 6. Electric Cyan Laser Flare Streak -->
+  <g filter="url(#laserGlow)">
+    <!-- Wide Laser Polygon Streak -->
+    <polygon points="140,400 280,245 305,235 180,395" fill="url(#laserBeam)" />
+    <!-- High-Intensity Blue Core Line -->
+    <line x1="285" y1="240" x2="165" y2="385" stroke="#00f5ff" strokeWidth="8" strokeLinecap="round" />
+    <!-- Pure White Central Core -->
+    <line x1="280" y1="245" x2="185" y2="365" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
+  </g>
+
+  <!-- Laser Starburst Flare -->
+  <g filter="url(#intenseGlow)">
+    <ellipse cx="230" cy="310" rx="36" ry="14" fill="#00f5ff" opacity="0.9" transform="rotate(-48 230 310)" />
+    <ellipse cx="230" cy="310" rx="20" ry="7" fill="#ffffff" transform="rotate(-48 230 310)" />
+    <circle cx="230" cy="310" r="5" fill="#ffffff" />
+  </g>
+
+  <!-- 7. Back Secondary 7 (Gunmetal Titanium Bevel) -->
+  <g>
+    <!-- Main Body -->
+    <polygon
+      points="298,188 438,188 312,408 284,408 382,230 298,230"
+      fill="url(#chromeDark)"
+      stroke="#1e293b"
+      strokeWidth="1.2"
+    />
+    <!-- Outer Edge Highlight -->
+    <polygon
+      points="438,188 424,188 312,408 324,408"
+      fill="#475569"
+      opacity="0.9"
+    />
+    <!-- Top Bar Chamfer -->
+    <polygon
+      points="298,188 438,188 430,200 312,200"
+      fill="#94a3b8"
+      opacity="0.65"
+    />
+  </g>
+
+  <!-- 8. Front Primary 7 (Brushed Chrome Stainless Steel) -->
+  <g>
+    <!-- Drop Shadow onto Back 7 -->
+    <polygon
+      points="214,134 424,134 256,456 224,456 364,204 220,204"
+      fill="#000000"
+      opacity="0.45"
+      transform="translate(6, 6)"
+      filter="url(#intenseGlow)"
+    />
+
+    <!-- Main Front 7 Facet -->
+    <polygon
+      points="212,132 420,132 254,452 222,452 362,202 218,202"
+      fill="url(#chromeBright)"
+      stroke="#f8fafc"
+      strokeWidth="1.5"
+    />
+
+    <!-- Top Horizontal Bevel (Specular White) -->
+    <polygon
+      points="212,132 420,132 410,148 226,148"
+      fill="#ffffff"
+      opacity="0.98"
+    />
+
+    <!-- Outer Diagonal Bevel -->
+    <polygon
+      points="420,132 408,148 244,450 254,452"
+      fill="#cbd5e1"
+      opacity="0.9"
+    />
+
+    <!-- Inner Diagonal Edge (reflects Cyan laser glow) -->
+    <polygon
+      points="362,202 352,216 222,452 226,438"
+      fill="#67e8f9"
+      opacity="0.65"
+    />
+
+    <!-- Brushed Horizontal Micro-lines -->
+    <line x1="235" y1="142" x2="395" y2="142" stroke="#ffffff" strokeWidth="1" opacity="0.6" />
+    <line x1="245" y1="152" x2="385" y2="152" stroke="#94a3b8" strokeWidth="0.8" opacity="0.5" />
+    <line x1="258" y1="162" x2="375" y2="162" stroke="#ffffff" strokeWidth="0.8" opacity="0.4" />
+
+    <!-- Sharp Points Specular Flares -->
+    <circle cx="223" cy="451" r="3.5" fill="#ffffff" />
+    <circle cx="420" cy="132" r="3.5" fill="#ffffff" />
+  </g>
+
+  <!-- 9. Typography: SEVEN SPACE -->
+  <g>
+    <text
+      x="300"
+      y="492"
+      text-anchor="middle"
+      font-family="'Plus Jakarta Sans', 'Prompt', -apple-system, sans-serif"
+      font-weight="900"
+      font-size="34"
+      letter-spacing="0.28em"
+      fill="url(#textChrome)"
+      stroke="#0f172a"
+      stroke-width="0.8"
+      style="filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.9));"
+    >SEVEN SPACE</text>
+
+    <!-- Specular Star Flare at corner of E in SPACE -->
+    <circle cx="504" cy="472" r="2.5" fill="#ffffff" filter="url(#intenseGlow)" />
+    <path d="M 504 466 L 504 478 M 498 472 L 510 472" stroke="#00f5ff" stroke-width="1.2" opacity="0.85" />
+  </g>
+
+  <!-- 10. Typography: — LABS — with Cyan Glowing Laser Lines -->
+  <g>
+    <!-- Left Laser Beam -->
+    <line x1="80" y1="528" x2="225" y2="528" stroke="url(#laserLineLeft)" stroke-width="2.5" filter="url(#intenseGlow)" />
+    <!-- Left Starburst Flare -->
+    <circle cx="152" cy="528" r="3" fill="#ffffff" filter="url(#intenseGlow)" />
+    <ellipse cx="152" cy="528" rx="8" ry="2" fill="#00f5ff" filter="url(#intenseGlow)" />
+
+    <!-- Center LABS Text -->
+    <text
+      x="300"
+      y="537"
+      text-anchor="middle"
+      font-family="'Plus Jakarta Sans', 'Prompt', -apple-system, sans-serif"
+      font-weight="900"
+      font-size="28"
+      letter-spacing="0.35em"
+      fill="#00f5ff"
+      style="filter: drop-shadow(0 0 10px #00f5ff) drop-shadow(0 0 20px rgba(0, 245, 255, 0.7));"
+    >LABS</text>
+
+    <!-- Right Laser Beam -->
+    <line x1="375" y1="528" x2="520" y2="528" stroke="url(#laserLineRight)" stroke-width="2.5" filter="url(#intenseGlow)" />
+    <!-- Right Starburst Flare -->
+    <circle cx="448" cy="528" r="3" fill="#ffffff" filter="url(#intenseGlow)" />
+    <ellipse cx="448" cy="528" rx="8" ry="2" fill="#00f5ff" filter="url(#intenseGlow)" />
+  </g>
+</svg>

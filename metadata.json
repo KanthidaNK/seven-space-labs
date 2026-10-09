@@ -1,0 +1,8 @@
+{
+  "name": "Remix Seven Space Labs",
+  "description": "Interactive Astrophysics Command \u0026 All-in-One STEM Learning Deck with 7 Mission Labs, real-time quiz arena, AI exam generation, and celestial library.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

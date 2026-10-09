@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Kanit', 'Prompt', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #0c0c0c;
+  }
+}
+
+.font-kanit {
+  font-family: 'Kanit', sans-serif;
+}
+
+.font-archivo {
+  font-family: 'Archivo Black', 'Montserrat', sans-serif !important;
+}
+
+.font-instrument {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+/* Dark Console & Hero Heading Gradient */
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 6px 24px rgba(100, 105, 115, 0.18));
+}
+
+/* Keyframe animation for floating test tube & reactors */
+@keyframes floatTube {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translateY(-8px) rotate(var(--rot, 0deg));
+  }
+}
+
+.animate-float-tube {
+  animation: floatTube 3s ease-in-out infinite;
+}
+
+/* 3D Mascot Zero-Gravity Floating Animation */
+@keyframes mascotFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(1.8deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-mascot-float {
+  animation: mascotFloat 5s ease-in-out infinite;
+}
+
+/* GraviTask Logo G Micro-Floating Animation (±4px gentle float) */
+@keyframes floatG {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-float-g {
+  animation: floatG 3s ease-in-out infinite;
+}
+
+@keyframes orbitalAura {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.08) rotate(180deg);
+    opacity: 0.85;
+  }
+}
+
+.animate-orbital-aura {
+  animation: orbitalAura 8s ease-in-out infinite;
+}
+
+/* Hide scrollbars */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Classic Liquid Glass (Dark / Cosmic mode) */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.03);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  position: relative;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* White Sci-Fi Fantasy Liquid Glass (White mode) */
+.liquid-glass-white {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(99, 102, 241, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  position: relative;
+}
+
+.liquid-glass-white-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.92) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.07), 0 4px 12px -2px rgba(15, 23, 42, 0.03), inset 0 1px 1px rgba(255, 255, 255, 1);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-white-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.14), 0 8px 20px -4px rgba(15, 23, 42, 0.04), inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+
+/* Neon & Starlight Glow effects */
+.glow-primary {
+  box-shadow: 0 0 28px -4px rgba(99, 102, 241, 0.4);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 24px -4px rgba(6, 182, 212, 0.4);
+}
+
+.glow-star {
+  text-shadow: 0 0 12px rgba(99, 102, 241, 0.45);
+}
+
+/* Custom scrollbar for clean sci-fi decks */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+
+/* Custom sleek scrollbar for mode lists and dialog containers */
+.sleek-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+}
+.sleek-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.sleek-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sleek-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+.sleek-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.7);
+}
+
+/* ======================================================== */
+/* High-Precision Print & PDF Export Styles                */
+/* ======================================================== */
+@media screen {
+  #printable-exam-document,
+  .print-only-container {
+    position: absolute;
+    left: -99999px;
+    top: 0;
+    width: 794px;
+    background: #ffffff;
+    color: #000000;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* When printing certificate, hide all except certificate node */
+  body.printing-certificate * {
+    visibility: hidden;
+  }
+
+  body.printing-certificate #certificate-render-node,
+  body.printing-certificate #certificate-render-node * {
+    visibility: visible !important;
+  }
+
+  body.printing-certificate #certificate-render-node {
+    display: flex !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    margin: 0 !important;
+    padding: 10mm !important;
+    box-sizing: border-box !important;
+    z-index: 99999999 !important;
+    background: #ffffff !important;
+    border-width: 6mm !important;
+  }
+
+  /* Default exam print rules */
+  body:not(.printing-certificate) body * {
+    visibility: hidden;
+  }
+
+  body:not(.printing-certificate) #printable-exam-document,
+  body:not(.printing-certificate) #printable-exam-document *,
+  body:not(.printing-certificate) .print-only-container,
+  body:not(.printing-certificate) .print-only-container * {
+    visibility: visible !important;
+  }
+
+  body:not(.printing-certificate) #printable-exam-document,
+  body:not(.printing-certificate) .print-only-container {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    z-index: 9999999 !important;
+  }
+
+  .pdf-render-page {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 260mm !important;
+    padding: 8mm 12mm !important;
+    box-sizing: border-box !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    background: #ffffff !important;
+    overflow: visible !important;
+  }
+
+  .pdf-render-page:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  /* Hide all non-printable UI elements */
+  nav,
+  header,
+  footer,
+  aside,
+  button,
+  canvas,
+  .no-print,
+  .print\:hidden,
+  .no-print-area {
+    display: none !important;
+  }
+
+  /* Prevent calculation box from breaking awkwardly across pages */
+  .exam-question-item,
+  .print-question-avoid {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
